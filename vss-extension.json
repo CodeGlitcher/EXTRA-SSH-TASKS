@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "build-release-task",
+    "name": "SSH+",
+    "version": "0.0.1",
+    "publisher": "CodeGlitcher",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "SSH with passwords",
+    "categories": [
+        "Build and release"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"        
+    },
+    "files": [
+        {
+            "path": "tasks/ssh+"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "ssh+-release-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "tasks/ssh+"
+            }
+        }
+    ]
+}
