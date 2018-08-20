@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "build-release-task",
-    "name": "SSH+",
+    "name": "Extra SSH tasks",
     "version": "0.0.2",
     "publisher": "CodeGlitcher",
     "targets": [
