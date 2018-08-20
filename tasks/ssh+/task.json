@@ -1,7 +1,7 @@
 {
     "id": "90e31207-5624-47ba-9247-91675b537110",
-    "name": "SSH+",
-    "friendlyName": "SSH+",
+    "name": "SSH dynamic",
+    "friendlyName": "SSH dynamic",
     "description": "SSH task with dynamic connection",
     "helpMarkDown": "",
     "category": "Deploy",
@@ -33,15 +33,15 @@
         {
             "name": "sshEndpoint",
             "type": "string",
-            "label": "SSH host",
+            "label": "SSH endpoint",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "Hostname of the machine"
+            "helpMarkDown": "Endpoint of the machine"
         },     
         {
             "name": "sshUser",
             "type": "string",
-            "label": "SSH service connection",
+            "label": "SSH username",
             "defaultValue": "",
             "required": true,
             "helpMarkDown": "SSH username"
@@ -49,7 +49,7 @@
         {
             "name": "sshPassword",
             "type": "string",
-            "label": "SSH service connection",
+            "label": "SSH password",
             "defaultValue": "",
             "required": true,
             "helpMarkDown": "SSH password"
@@ -57,8 +57,8 @@
         {
             "name": "sshPort",
             "type": "string",
-            "label": "SSH service connection",
-            "defaultValue": "",
+            "label": "SSH port",
+            "defaultValue": "22",
             "required": false,
             "helpMarkDown": "SSH port"
         },
