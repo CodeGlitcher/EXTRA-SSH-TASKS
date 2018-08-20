@@ -1,8 +1,8 @@
 {
     "id": "90e31207-5624-47ba-9247-91675b537110",
-    "name": "MyFirstTask",
-    "friendlyName": "MyFirstTask",
-    "description": "MyFirstTask description",
+    "name": "SSH+",
+    "friendlyName": "SSH+",
+    "description": "SSH task with dynamic connection",
     "helpMarkDown": "",
     "category": "Deploy",
     "visibility": [
