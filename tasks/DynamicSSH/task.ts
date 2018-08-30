@@ -29,7 +29,8 @@ async function run() {
                 host: hostname,
                 port: port,
                 username: username,
-                password: password
+                password: password,
+                path: ''
             }
 
         //read the run options
@@ -52,6 +53,7 @@ async function run() {
                 tl.debug('No script header detected.  Adding: ' + bashHeader);
                 inlineScript = bashHeader + os.EOL + inlineScript;
             }
+            args = tl.getInput('inline-args')
             scriptFile = path.join(os.tmpdir(), 'sshscript_' + new Date().getTime()); // default name
             try {
                 fs.writeFileSync(scriptFile, inlineScript);
