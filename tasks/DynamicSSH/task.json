@@ -15,9 +15,9 @@
     ],
     "author": "CodeGlitcher",
     "version": {
-        "Major": 2,
-        "Minor": 1,
-        "Patch": 1
+        "Major": 3,
+        "Minor": 0,
+        "Patch": 0
     },
     "demands": [],
     "minimumAgentVersion": "2.102.0",
@@ -120,15 +120,6 @@
             "helpMarkDown": "Arguments to pass to the shell script."
         },
         {
-            "name": "inline-args",
-            "type": "string",
-            "label": "Arguments",
-            "defaultValue": "",
-            "required": false,
-            "visibleRule": "runOptions = inline",
-            "helpMarkDown": "Arguments to pass to the shell script."
-        },
-        {
             "name": "failOnStdErr",
             "type": "boolean",
             "label": "Fail on STDERR",
@@ -136,6 +127,19 @@
             "defaultValue": true,
             "helpMarkDown": "If this option is selected, the build will fail when the remote commands or script write to STDERR.",
             "groupName": "advanced"
+        },
+        {
+            "name": "readyTimeout",
+            "type": "string",
+            "label": "SSH handshake timeout",
+            "defaultValue": "20000",
+            "required": true,
+            "groupName": "advanced",
+            "helpMarkDown": "How long (in milliseconds) to wait for the SSH handshake to complete.",
+            "validation": {
+                "expression": "isMatch(value, '(^\\d*$)','Multiline')",
+                "message": "Enter a valid value for timeout."
+            }
         }
     ],
     "execution": {
@@ -145,13 +149,14 @@
         }
     },
     "messages": {
-        "UseDefaultPort": "Using port 22 which is the default for SSH since no port was specified.",
-        "SettingUpSshConnection": "Trying to establish an SSH connection to %s@%s:%s",
-        "SshConnectionSuccessful": "Successfully connected.",
         "ConnectionFailed": "Failed to connect to remote machine. Verify the SSH service connection details. Error: %s.",
-        "RemoteCopyFailed": "Failed to copy script to remote machine. Error: %s.",
+        "FailedToWriteScript": "Failed to write the script to disk: %s",
         "RemoteCmdExecutionErr": "Command failed with errors on remote machine.",
         "RemoteCmdNonZeroExitCode": "Command %s exited with code %s.",
-        "RemoteScriptFileCleanUpFailed": "Failed to delete the script file copied to the remote machine. Error = %s."
+        "RemoteCopyFailed": "Failed to copy script to remote machine. Error: %s.",
+        "RemoteScriptFileCleanUpFailed": "Failed to delete the script file copied to the remote machine. Error = %s.",
+        "SettingUpSshConnection": "Trying to establish an SSH connection to %s@%s:%s",
+        "SshConnectionSuccessful": "Successfully connected.",
+        "UseDefaultPort": "Using port 22 which is the default for SSH since no port was specified."
     }
 }

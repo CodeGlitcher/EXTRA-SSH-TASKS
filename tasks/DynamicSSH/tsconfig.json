@@ -2,5 +2,14 @@
     "compilerOptions": {
         "target": "ES6",
         "module": "commonjs",
-    }
+        "noImplicitThis": true
+    },
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ],
+    "files": [
+        "ssh2helpers.ts",
+        "task.ts"
+    ]
 }
